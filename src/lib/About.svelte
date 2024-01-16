@@ -3,21 +3,30 @@
 	import faceImage from '$lib/images/face.png';
 	import dogImage from '$lib/images/dog.jpg';
 	import greeceImage from '$lib/images/greece.png';
+    import travImage from '$lib/images/trav.jpg';
+    import beachImage from '$lib/images/beach.jpg';
 	let parallax;
 </script>
 
 <div class="about-me">
-	<Parallax sections={2} class="parallax">
-		<ParallaxLayer offset={parseFloat('0.2')} rate={parseFloat('0.1')}>
-			<img src={faceImage} alt="face" style="display: block; width: 20%; margin-left: 28%;" />
+	<Parallax sections={6} class="parallax">
+        <ParallaxLayer offset={parseFloat('0.25')} rate={parseFloat('0.4')}>
+            <img src={dogImage} alt="dog" style="display: block; width: 17%; margin-left: 10%;" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={parseFloat('0.75')} rate={parseFloat('0.4')}>
+            <img src={greeceImage} alt="greece" style="display: block; width: 17%; margin-left: 44%;" />
+        </ParallaxLayer>
+        <ParallaxLayer offset={parseFloat('0.65')} rate={parseFloat('0.35')}>
+			<img src={beachImage} alt="trav" style="display: block; width: 19%; margin-left: 16%;" />
 		</ParallaxLayer>
-        <ParallaxLayer offset={parseFloat('0.5')} rate={parseFloat('0.6')}>
-            <img src={dogImage} alt="dog" style="display: block; width: 20%; margin-left: 10%;" />
-        </ParallaxLayer>
-        <ParallaxLayer offset={parseFloat('0.8')} rate={parseFloat('0.2')}>
-            <img src={greeceImage} alt="greece" style="display: block; width: 20%; margin-left: 44%;" />
-        </ParallaxLayer>
-		<ParallaxLayer offset={parseFloat('0.1')} rate={parseFloat('-1.3')}>
+		<!-- <ParallaxLayer offset={parseFloat('0.9')} rate={parseFloat('0.4')}>
+			<img src={travImage} alt="beach" style="display: block; width: 17%; margin-left: 7%;" />
+		</ParallaxLayer> -->
+		<ParallaxLayer offset={parseFloat('0.15')} rate={parseFloat('0.2')}>
+			<img src={faceImage} alt="face" style="display: block; width: 21%; margin-left: 32%;" />
+		</ParallaxLayer>
+		<ParallaxLayer offset={parseFloat('0.1')} rate={parseFloat('-0.2')}>
+			
 			<div
 				style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 300px; margin-left: 70%;"
 			>
