@@ -1,6 +1,4 @@
 <script lang="ts">
-	import locationImage from '$lib/images/location_image.png';
-	import Cube from '$lib/Cube.svelte';
 	import Header from '$lib/Header.svelte';
 	import About from '$lib/About.svelte';
 	import { onMount } from 'svelte';
@@ -16,10 +14,10 @@
 				);
 				console.log(scrollPercentage);
 				$cubeData.forEach((cube, i) => {
-					cube.x = $initialCubeData[i].x * (1 + scrollPercentage * 0.3);
+					cube.x = $initialCubeData[i].x * (1 + scrollPercentage * 0.6);
 					cube.y = $initialCubeData[i].y * (1 + scrollPercentage * 0.3);
-					cube.size = $initialCubeData[i].size * (1 + scrollPercentage * 0.3);
-					cube.rotate = $initialCubeData[i].rotate * (1 + scrollPercentage * 0.5);
+					cube.size = $initialCubeData[i].size * (1 + scrollPercentage * 0.2);
+					cube.rotate = $initialCubeData[i].rotate + scrollPercentage * 300;
 				});
 				$cubeData = $cubeData;
 			};

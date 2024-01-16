@@ -1,22 +1,9 @@
 <div class="about-me">
 	<h1>About Me</h1>
 	<h4>
-		I'm a student interested in learning many skills in software development, aiming to become a
-		more well rounded engineer. As a generalist, I always thought I would never master a skill, but
-		now I have learned to lean into my strengths of being a fast learner to succeed in any field.
+		I'm a student interested in expanding my knowledge of computer science and software engineering. First finding interest in deep learning, I involved myself with research and startups. Wanting to test my skills, I have also participated in competitive coding. Currently, I am learning to develop front and back end we applications as well as learning new languages like C and Rust.
 	</h4>
-	<h4>
-		I started my journey into computer science with machine learning, hoping to solve major issues
-		in the healthcare industry. As I got involved with research, I realized the many blind spots I
-		had in coding in general. I tried my skill in competitive coding where I further learned I knew
-		nothing about web development. After developing frontend and backend web projects, I realized
-		the impossible task of learning everything about computer science. This website is to share that
-		impossible journey.
-	</h4>
-	<h4>
-		Outside of learning, I still have many responsibilities to my life in bodybuilding, trying all
-		kinds of food, and travelling the world.
-	</h4>
+	<h4>Outside of coding, you'll find me in the gym, trying all kinds of food, and travelling the world.</h4>
 	<h4>If you want to chat, please feel free to reach out!</h4>
 </div>
 
