@@ -14,10 +14,14 @@
 				);
 				console.log(scrollPercentage);
 				$cubeData.forEach((cube, i) => {
-					cube.x = $initialCubeData[i].x * (1 + scrollPercentage * 0.6);
-					cube.y = $initialCubeData[i].y * (1 + scrollPercentage * 0.3);
+					// cube.x = $initialCubeData[i].x * (1 + scrollPercentage * 0.6);
+					// cube.y = $initialCubeData[i].y * (1 + scrollPercentage * 0.3);
+					// the larger the x, the less it moves
+					// the larger the y, the more it moves
+					cube.x = $initialCubeData[i].x * (1 + scrollPercentage / (Math.abs($initialCubeData[i].x) / 80));
+					cube.y = $initialCubeData[i].y * (1 + scrollPercentage / (Math.abs($initialCubeData[i].y) / 80));
 					cube.size = $initialCubeData[i].size * (1 + scrollPercentage * 0.2);
-					cube.rotate = $initialCubeData[i].rotate + scrollPercentage * 300;
+					cube.rotate = $initialCubeData[i].rotate + scrollPercentage * 80;
 				});
 				$cubeData = $cubeData;
 			};
@@ -90,21 +94,6 @@
 				color: hsl(198, 100%, 43%);
 				font-weight: 800;
 			}
-		}
-	}
-	.about-me {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
-		h1 {
-			grid-column-start: 4;
-			margin-bottom: 0;
-		}
-
-		h4 {
-			grid-column-start: 4;
-			line-height: 25px;
-			font-weight: 600;
 		}
 	}
 </style>
