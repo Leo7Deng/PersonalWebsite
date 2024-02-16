@@ -2,6 +2,7 @@
 	import Header from '$lib/Header.svelte';
 	import About from '$lib/About.svelte';
 	import Header2 from '$lib/Header2.svelte';
+	import Work from '$lib/Work.svelte';
 	import { onMount } from 'svelte';
 	import { cubeData, initialCubeData } from '$lib/stores';
 
@@ -31,6 +32,7 @@
 
 <div id="scroller">
 	<Header2></Header2>
+	<Work></Work>
 	<!-- <Header></Header>
 	<About></About> -->
 </div>
