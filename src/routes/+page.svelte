@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/Header.svelte';
 	import About from '$lib/About.svelte';
+	import Header2 from '$lib/Header2.svelte';
 	import { onMount } from 'svelte';
 	import { cubeData, initialCubeData } from '$lib/stores';
 
@@ -29,8 +30,9 @@
 </script>
 
 <div id="scroller">
-	<Header></Header>
-	<About></About>
+	<Header2></Header2>
+	<!-- <Header></Header>
+	<About></About> -->
 </div>
 
 <style global lang="scss">
