@@ -12,14 +12,13 @@
 					0.8,
 					document.documentElement.scrollTop / elementClientHeight
 				);
-				console.log(scrollPercentage);
 				$cubeData.forEach((cube, i) => {
 					// cube.x = $initialCubeData[i].x * (1 + scrollPercentage * 0.6);
 					// cube.y = $initialCubeData[i].y * (1 + scrollPercentage * 0.3);
 					// the larger the x, the less it moves
 					// the larger the y, the more it moves
-					cube.x = $initialCubeData[i].x * (1 + scrollPercentage / (Math.abs($initialCubeData[i].x) / 80));
-					cube.y = $initialCubeData[i].y * (1 + scrollPercentage / (Math.abs($initialCubeData[i].y) / 80));
+					cube.x = $initialCubeData[i].x * (1 + scrollPercentage / (Math.abs($initialCubeData[i].x) / 50));
+					cube.y = $initialCubeData[i].y * (1 + scrollPercentage / (Math.abs($initialCubeData[i].y) / 20));
 					cube.size = $initialCubeData[i].size * (1 + scrollPercentage * 0.2);
 					cube.rotate = $initialCubeData[i].rotate + scrollPercentage * 80;
 				});
@@ -42,10 +41,6 @@
 			'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-	}
-
-	#scroller {
-		overflow-y: scroll;
 	}
 
 	:global(code) {
