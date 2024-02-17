@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Header from '$lib/Header.svelte';
-	import About from '$lib/About.svelte';
 	import Header2 from '$lib/Header2.svelte';
 	import Work from '$lib/Work.svelte';
 	import { onMount } from 'svelte';

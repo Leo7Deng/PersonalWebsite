@@ -1,25 +1,25 @@
 <script lang="ts">
-	import { Parallax, ParallaxLayer } from 'svelte-parallax';
-	import faceImage from '$lib/images/face.png';
-	import dogImage from '$lib/images/dog.jpg';
-	import greeceImage from '$lib/images/greece.png';
-	import travImage from '$lib/images/trav.jpg';
-	import beachImage from '$lib/images/beach.jpg';
+	// import { Parallax, ParallaxLayer } from 'svelte-parallax';
+	// import faceImage from '$./lib/images/face.png';
+	// import dogImage from '$./lib/images/dog.jpg';
+	// import greeceImage from '$./lib/images/greece.png';
+	// import travImage from '$./lib/images/trav.jpg';
+	// import beachImage from '$./lib/images/beach.jpg';
 </script>
 
 <div class="about-me">
 	<!-- <Parallax sections={2} class="parallax"> -->
 		<!-- <ParallaxLayer offset={parseFloat('0.25')} rate={parseFloat('0.45')}> -->
-			<img src={dogImage} alt="dog" style="display: block; width: 17%; margin-left: 10%;" />
+			<!-- <img src={dogImage} alt="dog" style="display: block; width: 17%; margin-left: 10%;" /> -->
 		<!-- </ParallaxLayer> -->
 		<!-- <ParallaxLayer offset={parseFloat('0.75')} rate={parseFloat('0.4')}> -->
-			<img src={greeceImage} alt="greece" style="display: block; width: 17%; margin-left: 44%;" />
+			<!-- <img src={greeceImage} alt="greece" style="display: block; width: 17%; margin-left: 44%;" /> -->
 		<!-- </ParallaxLayer>
 		<ParallaxLayer offset={parseFloat('0.65')} rate={parseFloat('0.35')}> -->
-			<img src={beachImage} alt="beach" style="display: block; width: 19%; margin-left: 16%;" />
+			<!-- <img src={beachImage} alt="beach" style="display: block; width: 19%; margin-left: 16%;" /> -->
 		<!-- </ParallaxLayer>
 		<ParallaxLayer offset={parseFloat('0.15')} rate={parseFloat('0.2')}> -->
-			<img src={faceImage} alt="face" style="display: block; width: 21%; margin-left: 32%;" />
+			<!-- <img src={faceImage} alt="face" style="display: block; width: 21%; margin-left: 32%;" /> -->
 		<!-- </ParallaxLayer>
 		<ParallaxLayer offset={parseFloat('0.1')} rate={parseFloat('-0.2')}> -->
 			<div
