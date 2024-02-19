@@ -3,7 +3,7 @@
 	import GitMe from '$lib/images/GitMe.png';
 	import aoc from '$lib/images/aoc.png';
 	import mercury from '$lib/images/mercury.png';
-	import opensearch from '$lib/images/opensearch.jpg';
+	import opensearch from '$lib/images/opensearch.png';
 	let isOpen = false;
 	let content = '';
   
@@ -64,10 +64,12 @@
 		background-color: rgb(217, 217, 217);
 		padding: 20px;
 		height: 300px;
+		width: 450px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		position: relative;
+		border-radius: 8px;
 	}
 	.work-overlay {
 		background-color: hsl(0, 0%, 22%);
@@ -79,6 +81,7 @@
 		bottom: 0;
 		left: 0;
 		transition: opacity 0.5s;
+		border-radius: 8px;
 	}
 
 	.work-overlay:hover {
@@ -97,4 +100,8 @@
 		margin-right: auto;
 		width: 300px;
 	}
+	.work-item:nth-child(4) .work-image {
+    width: 400px;
+}
+	
 </style>
