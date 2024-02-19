@@ -11,7 +11,7 @@
 		<div class="title">
 			<h1 class="name">
 				Hi 👋, I'm Leo, a student <br />
-				studying computer science at Purdue.
+				studying <span class="highlight">computer science</span> at <span class="highlight">Purdue</span>.
 			</h1>
 			<a href="/about" class="about-link">About Me ⮐</a>
 		</div>
@@ -56,7 +56,18 @@
 		}
 		.icon {
 			width: 40px;
+            padding: 5px;
 			height: auto;
+            border-radius: 5px;
+            transition: 0.5s;
 		}
+        .icon:hover {
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+        .highlight {
+            color: hsl(198, 100%, 43%);
+            font-weight: 800;
+        }
 	}
 </style>
