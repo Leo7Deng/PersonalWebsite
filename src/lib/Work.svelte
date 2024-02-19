@@ -4,43 +4,58 @@
 	import aoc from '$lib/images/aoc.png';
 	import mercury from '$lib/images/mercury.png';
 	import opensearch from '$lib/images/opensearch.png';
+	import mlp from '$lib/images/mlp.png';
+	import raytheon from '$lib/images/raytheon.png';
+	import usaco from '$lib/images/usaco.png';
+	import scl from '$lib/images/scl.png';
+	import vitu from '$lib/images/vitu.png';
+	import spotifysifter from '$lib/images/spotifysifter.png';
 	let isOpen = false;
 	let content = '';
-  
+
 	const works = [
-	  { id: 1, title: 'GitMe', description: 'Description for GitMe', image: GitMe },
-	  { id: 2, title: 'Advent of Code', description: 'Description for Advent of Code', image: aoc },
-	  { id: 3, title: 'Mercury Alert AI', description: 'Description for Mercury', image: mercury },
-	  { id: 4, title: 'Amazon OpenSearch', description: 'Description for OpenSearch', image: opensearch },
+		{ id: 1, title: 'GitMe', description: 'Description for GitMe', image: GitMe },
+		{ id: 2, title: 'Advent of Code', description: 'Description for Advent of Code', image: aoc },
+		{ id: 3, title: 'Mercury Alert AI', description: 'Description for Mercury', image: mercury },
+		{ id: 4, title: 'Amazon OpenSearch', description: 'Description for OpenSearch', image: opensearch },
+		{ id: 5, title: 'Machine Learning @ Purdue', description: 'Description for MLP', image: mlp },
+		{ id: 6, title: 'Raytheon', description: 'Description for Raytheon', image: raytheon },
+		{ id: 7, title: 'USACO', description: 'Description for USACO', image: usaco },
+		{ id: 8, title: 'Sustainable Computing Laboratory', description: 'Description for SCL', image: scl },
+		{ id: 9, title: 'Vitu', description: 'Description for Vitu', image: vitu },
+		{ id: 10, title: 'Spotify Sifter', description: 'Description for Spotify Sifter', image: spotifysifter }
 	];
-  
+
 	function openModal(work: any) {
-	  content = `<h2>${work.title}</h2><p>${work.description}</p><img src="${work.image}" alt="${work.title}" style="max-width:100%;">`;
-	  isOpen = true;
+		content = `<h2>${work.title}</h2><p>${work.description}</p><img src="${work.image}" alt="${work.title}" style="max-width:100%;">`;
+		isOpen = true;
 	}
-  
+
 	function closeModal() {
-	  isOpen = false;
+		isOpen = false;
 	}
-  </script>
-  
-  <div class="work">
-	<h1 class="title">Featured Work.</h1>
+</script>
+
+<div class="work">
+	<h1 class="title">My Projects.</h1>
 	<div class="work-container">
-	  {#each works as work}
-	  <div class="work-item" on:click={() => openModal(work)}>
-		<div class="work-overlay"></div>
-		<img src={work.image} alt={work.title} class="work-image" />
-	  </div>
-	  {/each}
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		{#each works as work}
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div class="work-item" on:click={() => openModal(work)}>
+				<div class="work-overlay"></div>
+				<img src={work.image} alt={work.title} class="work-image" />
+			</div>
+		{/each}
 	</div>
-  </div>
-  
-  <Modal {isOpen} {content} onClose={closeModal} />
-  
+</div>
+
+<Modal {isOpen} {content} onClose={closeModal} />
 
 <style lang="scss">
 	.work {
+		margin-bottom: 50px;
 		.title {
 			margin-left: 17vw;
 			margin-top: 10vw;
@@ -101,7 +116,15 @@
 		width: 300px;
 	}
 	.work-item:nth-child(4) .work-image {
-    width: 400px;
-}
-	
+		width: 400px;
+	}
+	.work-item:nth-child(5) .work-image {
+		width: 400px;
+	}
+	.work-item:nth-child(6) .work-image {
+		width: 430px;
+	}
+	.work-item:nth-child(10) .work-image {
+		width: 400px;
+	}
 </style>
