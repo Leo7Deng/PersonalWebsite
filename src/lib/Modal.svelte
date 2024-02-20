@@ -22,7 +22,8 @@
 </div>
 {/if}
 
-<style>
+<style lang="scss">
+    @import 'normalize.css';
     .modal-overlay {
       position: fixed;
       top: 0;

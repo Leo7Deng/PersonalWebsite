@@ -54,6 +54,7 @@
 <Modal {isOpen} {content} onClose={closeModal} />
 
 <style lang="scss">
+	@import 'normalize.css';
 	.work {
 		margin-bottom: 50px;
 		.title {
