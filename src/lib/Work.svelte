@@ -77,7 +77,7 @@
 		grid-column: 3;
 	}
 	.work-item {
-		background-color: rgb(217, 217, 217);
+		background-color: rgb(213, 213, 213);
 		padding: 20px;
 		height: 300px;
 		width: 450px;
