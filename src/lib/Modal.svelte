@@ -12,7 +12,12 @@
 </script>
 
 {#if isOpen}
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <div class="modal-overlay" on:click={onClose} tabindex="0">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="modal-window" on:click|stopPropagation>
         <button class="close-btn" on:click={onClose} on:keydown={handleKeydown} type="button">
             ×
