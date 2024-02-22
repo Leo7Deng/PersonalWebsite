@@ -14,7 +14,7 @@
 	let content = '';
 
 	const works = [
-		{ id: 1, title: 'GitMe', description: 'Description for GitMe', image: GitMe },
+		{ id: 1, title: 'GitMe', description: 'GitMe is a GitHub repository summary tool for resume planning with Github and ChatGPT API in React and Python. I implemented frontend homepage features, routing with React Router, and input to fetch backend endpoint. I also lead project workflow and organized team structure with Figma and GitHub; presented project demo', image: GitMe },
 		{ id: 2, title: 'Advent of Code', description: 'Description for Advent of Code', image: aoc },
 		{ id: 3, title: 'Mercury Alert AI', description: 'Description for Mercury', image: mercury },
 		{ id: 4, title: 'Amazon OpenSearch', description: 'Description for OpenSearch', image: opensearch },
