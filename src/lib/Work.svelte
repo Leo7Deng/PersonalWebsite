@@ -14,16 +14,16 @@
 	let content = '';
 
 	const works = [
+		{ id: 6, title: 'Raytheon', description: 'Description for Raytheon', image: raytheon },
+		{ id: 4, title: 'Amazon OpenSearch', description: 'Description for OpenSearch', image: opensearch },
+		{ id: 10, title: 'Spotify Sifter', description: 'Description for Spotify Sifter', image: spotifysifter },
+		{ id: 5, title: 'Machine Learning @ Purdue', description: 'Description for MLP', image: mlp },
+		{ id: 3, title: 'Mercury Alert AI', description: 'Description for Mercury', image: mercury },
 		{ id: 1, title: 'GitMe', description: 'GitMe is a GitHub repository summary tool for resume planning with Github and ChatGPT API in React and Python. I implemented frontend homepage features, routing with React Router, and input to fetch backend endpoint. I also lead project workflow and organized team structure with Figma and GitHub; presented project demo', image: GitMe },
 		{ id: 2, title: 'Advent of Code', description: 'Description for Advent of Code', image: aoc },
-		{ id: 3, title: 'Mercury Alert AI', description: 'Description for Mercury', image: mercury },
-		{ id: 4, title: 'Amazon OpenSearch', description: 'Description for OpenSearch', image: opensearch },
-		{ id: 5, title: 'Machine Learning @ Purdue', description: 'Description for MLP', image: mlp },
-		{ id: 6, title: 'Raytheon', description: 'Description for Raytheon', image: raytheon },
-		{ id: 7, title: 'USACO', description: 'Description for USACO', image: usaco },
 		{ id: 8, title: 'Sustainable Computing Laboratory', description: 'Description for SCL', image: scl },
-		{ id: 9, title: 'Vitu', description: 'Description for Vitu', image: vitu },
-		{ id: 10, title: 'Spotify Sifter', description: 'Description for Spotify Sifter', image: spotifysifter }
+		{ id: 9, title: 'Vitu', description: 'Description for Vitu', image: vitu },				
+		{ id: 7, title: 'USACO', description: 'Description for USACO', image: usaco }
 	];
 
 	function openModal(work: any) {
@@ -116,16 +116,16 @@
 		margin-right: auto;
 		width: 300px;
 	}
+	.work-item:nth-child(2) .work-image {
+		width: 400px;
+	}
 	.work-item:nth-child(4) .work-image {
 		width: 400px;
 	}
-	.work-item:nth-child(5) .work-image {
-		width: 400px;
-	}
-	.work-item:nth-child(6) .work-image {
+	.work-item:nth-child(1) .work-image {
 		width: 430px;
 	}
-	.work-item:nth-child(10) .work-image {
+	.work-item:nth-child(3) .work-image {
 		width: 400px;
 	}
 </style>
