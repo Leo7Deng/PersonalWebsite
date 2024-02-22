@@ -5,13 +5,10 @@
 	import email from '$lib/images/email.png';
 	import resume from '$lib/images/resume.pdf';
 	let isExpanded = false;
+	let isRotated = false;
 	function toggleExpansion() {
 		isExpanded = !isExpanded;
-	}
-	let isAnimated = false;
-	function startWritingAnimation() {
-		isAnimated = true;
-		isExpanded = !isExpanded;
+		isRotated = !isRotated;
 	}
 </script>
 
@@ -27,7 +24,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div class="about-container" on:click={toggleExpansion}>
-				<p class="about-link">About Me ⮐</p>
+				<p class="about-link">About Me <span class={isRotated ? 'rotated' : 'unrotated'}>⮐</span></p>
 				<div class="about-slider" class:expanded={isExpanded}></div>
 				<p>
 					I'm in love with developing my knowledge for computer science and software engineering.
@@ -98,6 +95,16 @@
 			}
 			.expanded {
 				transform: translateX(100%);
+			}
+			.rotated {
+				transform: rotate(-90deg);
+				// text-decoration: underline;
+				display: inline-block;
+				transition: 0.5s;
+			}
+			.unrotated {
+				display: inline-block;
+				transition: 0.5s;
 			}
 		}
 		.icons {
