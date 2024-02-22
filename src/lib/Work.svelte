@@ -14,8 +14,8 @@
 
 	let isOpen = false;
 	const currentProject = writable({ title: '', description: '', image: '' });
-	function openModal(project: string) {
-		currentProject.set({ title: project, description: '', image: '' });
+	function openModal(project: string, description: string, image: string) {
+		currentProject.set({ title: project, description: description, image: image });
         isOpen = true;
     }
 
@@ -44,7 +44,7 @@
 		{#each works as work}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="work-item" on:click={() => openModal(work.description)}>
+			<div class="work-item" on:click={() => openModal(work.title, work.description, work.image)}>
 				<div class="work-overlay"></div>
 				<img src={work.image} alt={work.title} class="work-image" />
 			</div>
@@ -53,12 +53,10 @@
 </div>
 
 <Modal isOpen={isOpen} onClose={closeModal}>
-	{#if $currentProject.title === 'Description for Raytheon'}
+	{#if $currentProject.title === 'Raytheon'}
         <div>
             <h2>{$currentProject.title}</h2>
-			<h2>{$currentProject.title}</h2>
             <p>{$currentProject.description}</p>
-			<p>{$currentProject.description}</p>
 			<p>soiengoiasen</p>
 			piseagnpoeng
             <img src={$currentProject.image} alt="Raytheon" style="max-width: 100%;">
