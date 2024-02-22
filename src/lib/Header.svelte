@@ -98,7 +98,6 @@
 			}
 			.rotated {
 				transform: rotate(-90deg);
-				// text-decoration: underline;
 				display: inline-block;
 				transition: 0.5s;
 			}

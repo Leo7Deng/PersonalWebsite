@@ -1,28 +1,18 @@
 <script lang="ts">
     export let isOpen = false;
-    export let content = '';
-    export let onClose: () => void; // Correctly type the onClose function
-
-    // Function to handle keyboard events on the close button
-    function handleKeydown(event: KeyboardEvent) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            onClose();
-        }
-    }
+    export let onClose: () => void;
 </script>
 
-{#if isOpen}
-<!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
+{#if isOpen}
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="modal-overlay" on:click={onClose} tabindex="0">
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="modal-window" on:click|stopPropagation>
-        <button class="close-btn" on:click={onClose} on:keydown={handleKeydown} type="button">
+        <button class="close-btn" on:click={onClose} type="button">
             ×
         </button>
-        {@html content}
+        <slot></slot>
     </div>
 </div>
 {/if}
@@ -47,12 +37,12 @@
       background-color: white;
       padding: 20px;
       border-radius: 8px;
-      width: 800px; /* Fixed width */
-      height: 800px; /* Fixed height */
-      max-width: 90%; /* Ensures responsiveness */
-      max-height: 90vh; /* Ensures the modal fits within the viewport height */
+      width: 800px; 
+      height: 800px; 
+      max-width: 90%; 
+      max-height: 90vh; 
       overflow-y: auto;
-      box-sizing: border-box; /* Includes padding in the height calculation */
+      box-sizing: border-box; 
     }
     .close-btn {
       position: absolute;

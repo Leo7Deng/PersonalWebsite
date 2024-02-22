@@ -10,8 +10,18 @@
 	import scl from '$lib/images/scl.png';
 	import vitu from '$lib/images/vitu.png';
 	import spotifysifter from '$lib/images/spotifysifter.png';
+	import { writable } from 'svelte/store';
+
 	let isOpen = false;
-	let content = '';
+	const currentProject = writable({ title: '', description: '', image: '' });
+	function openModal(project: string) {
+		currentProject.set({ title: project, description: '', image: '' });
+        isOpen = true;
+    }
+
+    function closeModal() {
+        isOpen = false;
+	}
 
 	const works = [
 		{ id: 6, title: 'Raytheon', description: 'Description for Raytheon', image: raytheon },
@@ -22,18 +32,9 @@
 		{ id: 1, title: 'GitMe', description: 'GitMe is a GitHub repository summary tool for resume planning with Github and ChatGPT API in React and Python. I implemented frontend homepage features, routing with React Router, and input to fetch backend endpoint. I also lead project workflow and organized team structure with Figma and GitHub; presented project demo', image: GitMe },
 		{ id: 2, title: 'Advent of Code', description: 'Description for Advent of Code', image: aoc },
 		{ id: 8, title: 'Sustainable Computing Laboratory', description: 'Description for SCL', image: scl },
-		{ id: 9, title: 'Vitu', description: 'Description for Vitu', image: vitu },				
+		{ id: 9, title: 'Vitu', description: 'Description for Vitu', image: vitu },
 		{ id: 7, title: 'USACO', description: 'Description for USACO', image: usaco }
 	];
-
-	function openModal(work: any) {
-		content = `<h2>${work.title}</h2><p>${work.description}</p><img src="${work.image}" alt="${work.title}" style="max-width:100%;">`;
-		isOpen = true;
-	}
-
-	function closeModal() {
-		isOpen = false;
-	}
 </script>
 
 <div class="work">
@@ -43,7 +44,7 @@
 		{#each works as work}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="work-item" on:click={() => openModal(work)}>
+			<div class="work-item" on:click={() => openModal(work.description)}>
 				<div class="work-overlay"></div>
 				<img src={work.image} alt={work.title} class="work-image" />
 			</div>
@@ -51,7 +52,25 @@
 	</div>
 </div>
 
-<Modal {isOpen} {content} onClose={closeModal} />
+<Modal isOpen={isOpen} onClose={closeModal}>
+	{#if $currentProject.title === 'Description for Raytheon'}
+        <div>
+            <h2>{$currentProject.title}</h2>
+			<h2>{$currentProject.title}</h2>
+            <p>{$currentProject.description}</p>
+			<p>{$currentProject.description}</p>
+			<p>soiengoiasen</p>
+			piseagnpoeng
+            <img src={$currentProject.image} alt="Raytheon" style="max-width: 100%;">
+        </div>
+    {:else}
+        <div>
+            <h2>{$currentProject.title}</h2>
+            <p>{$currentProject.description}</p>
+        </div>
+    {/if}
+</Modal>
+
 
 <style lang="scss">
 	@import 'normalize.css';
