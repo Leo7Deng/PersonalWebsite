@@ -17,7 +17,7 @@
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="title">
 			<h1 class="name">
-				Hi 👋, I'm Leo, a student <br />
+				Hi 👋, I'm <span class="name-span">Leo</span>, a student <br />
 				studying <span class="highlight">computer science</span> at
 				<span class="highlight">Purdue</span>.
 			</h1>
@@ -63,6 +63,18 @@
 				font-size: 33px;
 				font-weight: bold;
 				margin-bottom: 30px;
+			}
+			.name-span {
+				color: rgb(255, 193, 38);
+				font-weight: 800;
+				// 1px shadow
+				// text-shadow: rgb(180, 132, 0) 1px 1px 1px;
+				// shadow
+				// text-shadow: 0 0 5px #d3d3d3, 0 0 10px #d3d3d3, 0 0 15px #d3d3d3, 0 0 20px #d3d3d3,
+					// 0 0 25px #d3d3d3, 0 0 30px #d3d3d3, 0 0 35px #d3d3d3;
+				// text-decoration: solid overline rgb(255, 193, 38) 6px;
+				// color: hsl(198, 100%, 43%);
+			// text-decoration: solid underline hsl(198, 100%, 43%) 6px;
 			}
 			.about-link {
 				font-size: 20px;
@@ -126,6 +138,7 @@
 		}
 		.highlight {
 			color: hsl(198, 100%, 43%);
+			text-decoration: solid underline hsl(198, 100%, 43%) 6px;
 			font-weight: 800;
 		}
 	}
