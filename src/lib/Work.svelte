@@ -7,6 +7,7 @@
 	import mlp from '$lib/images/mlp.png';
 	import raytheon from '$lib/images/raytheon.png';
 	import usaco from '$lib/images/usaco.png';
+	import usacoDescription from '$lib/images/usaco-description.png';
 	import scl from '$lib/images/scl.png';
 	import vitu from '$lib/images/vitu.png';
 	import spotifysifter from '$lib/images/spotifysifter.png';
@@ -87,10 +88,10 @@
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				<a href="https://github.com/Leo7Deng/GitMe" target="_blank">Gitme</a> is a GitHub
-				repository summary tool for resume planning using the Github api and OpenAI/ChatGPT API. The
-				frontend was built in React and the backend was made with Flask. This project was built in
-				Fall 2023, for the
+				<a href="https://github.com/Leo7Deng/GitMe" target="_blank">Gitme</a> is a GitHub repository
+				summary tool for resume planning using the Github api and OpenAI/ChatGPT API. The frontend
+				was built in React and the backend was made with Flask. This project was built in Fall 2023,
+				for the
 				<a href="https://www.instagram.com/helloworldpurdue/?hl=en" target="_blank"
 					>Hello World Hackathon</a
 				>, and was awarded 3rd place. The video below is a demo of the project.
@@ -103,6 +104,20 @@
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen
 			></iframe>
+		</div>
+	{:else if $currentProject.title === 'USACO'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				USACO is the national computing olympiad. I first started competing in USACO in January of
+				2022 where I competed in the bronze division, and passed. My next competition was the USACO
+				2022 US Open Contest, Silver Division. I passed the open contest and am currently in the
+				gold divison. You can check out my solutions <a
+					href="https://github.com/Leo7Deng/USACO"
+					target="_blank">here</a
+				>.
+			</p>
+			<img src={usacoDescription} alt="USACO" />
 		</div>
 	{:else}
 		<div>
@@ -204,6 +219,13 @@
 		width: 90%;
 		// center the modal
 		margin: 0 auto;
+		img {
+			margin-top: 80px;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
 	}
 	a {
 		color: hsl(198, 100%, 43%);
