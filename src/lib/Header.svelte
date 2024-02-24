@@ -22,9 +22,9 @@
 				<span class="highlight">Purdue</span>.
 			</h1>
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="about-container" on:click={toggleExpansion}>
-				<p class="about-link">About Me <span class={isRotated ? 'rotated' : 'unrotated'}>⮐</span></p>
+			<div class="about-container">
+				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+				<p class="about-link" on:click={toggleExpansion}>About Me <span class={isRotated ? 'rotated' : 'unrotated'}>⮐</span></p>
 				<div class="about-slider" class:expanded={isExpanded}></div>
 				<p>
 					I'm in love with developing my knowledge for computer science and software engineering.
@@ -65,8 +65,8 @@
 				margin-bottom: 30px;
 			}
 			.name-span {
-				color: rgb(255, 193, 38);
-				font-weight: 800;
+				// color: rgb(255, 193, 38);
+				// font-weight: 800;
 				// 1px shadow
 				// text-shadow: rgb(180, 132, 0) 1px 1px 1px;
 				// shadow
@@ -112,10 +112,12 @@
 				transform: rotate(-90deg);
 				display: inline-block;
 				transition: 0.5s;
+				text-decoration: underline;
 			}
 			.unrotated {
 				display: inline-block;
 				transition: 0.5s;
+				text-decoration: underline;
 			}
 		}
 		.icons {
