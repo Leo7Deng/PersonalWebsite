@@ -158,9 +158,34 @@
 			transition: 0.5s;
 		}
 		.highlight {
+			position: relative;
 			color: hsl(198, 100%, 43%);
-			text-decoration: solid underline hsl(198, 100%, 43%) 6px;
 			font-weight: 800;
+			// Added for animation
+			overflow: hidden;
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -2px; // Adjust as needed to position the underline
+				height: 6px; // Height of the underline
+				width: 100%;
+				background-color: hsl(198, 100%, 43%);
+				transform: scaleX(0);
+				transform-origin: bottom left;
+				animation: loadInHighlight 1s forwards linear;
+			}
+		}
+		@keyframes loadInHighlight {
+			from {
+				transform: scaleX(0);
+			}
+			to {
+				transform: scaleX(1);
+			}
+		}
+		.highlight:nth-of-type(3):after {
+			animation-delay: 1s; // Starts after the first animation finishes
 		}
 	}
 </style>

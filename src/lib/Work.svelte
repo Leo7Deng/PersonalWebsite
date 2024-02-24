@@ -217,7 +217,6 @@
 	}
 	.modal-div {
 		width: 90%;
-		// center the modal
 		margin: 0 auto;
 		img {
 			margin-top: 80px;
