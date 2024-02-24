@@ -115,6 +115,7 @@
 <style lang="scss">
 	@import 'normalize.css';
 	.work {
+		margin-top: -90px;
 		margin-bottom: 50px;
 		.title {
 			margin-left: 17vw;

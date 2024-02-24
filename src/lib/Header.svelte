@@ -4,6 +4,10 @@
 	import cv from '$lib/images/cv.png';
 	import email from '$lib/images/email.png';
 	import resume from '$lib/images/resume.pdf';
+	import greece from '$lib/images/greece.png';
+	import beach from '$lib/images/beach.jpg';
+	import dog from '$lib/images/dog.jpg';
+	import face from '$lib/images/face.png';
 	let isExpanded = false;
 	let isRotated = false;
 	function toggleExpansion() {
@@ -24,15 +28,21 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="about-container">
 				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-				<p class="about-link" on:click={toggleExpansion}>About Me <span class={isRotated ? 'rotated' : 'unrotated'}>⮐</span></p>
+				<p class="about-link" on:click={toggleExpansion}>
+					About Me <span class={isRotated ? 'rotated' : 'unrotated'}>⮐</span>
+				</p>
 				<div class="about-slider" class:expanded={isExpanded}></div>
 				<p>
 					I'm in love with developing my knowledge for computer science and software engineering.
 					First finding interest in deep learning, I involved myself with research and startups.
-					Wanting to test my skills, I have also participated in competitive coding. Currently, I am
-					learning to develop front and back end applications as well as learning new languages like
-					C and Rust.
+					Now, I am learning to develop front and back end applications as well as learning new
+					languages like C and Rust.
 				</p>
+				<!-- images face, dog, beach, greece -->
+				<img class="about-image" src={face} alt="face" />
+				<img class="about-image" src={dog} alt="dog" />
+				<img class="about-image" src={beach} alt="beach" />
+				<img class="about-image" src={greece} alt="greece" />
 			</div>
 		</div>
 		<div class="icons">
@@ -51,7 +61,7 @@
 <style lang="scss">
 	@import 'normalize.css';
 	.header2 {
-		margin-top: 23vh;
+		margin-top: 20vh;
 		.content-wrapper {
 			display: flex;
 			align-items: start;
@@ -71,10 +81,10 @@
 				// text-shadow: rgb(180, 132, 0) 1px 1px 1px;
 				// shadow
 				// text-shadow: 0 0 5px #d3d3d3, 0 0 10px #d3d3d3, 0 0 15px #d3d3d3, 0 0 20px #d3d3d3,
-					// 0 0 25px #d3d3d3, 0 0 30px #d3d3d3, 0 0 35px #d3d3d3;
+				// 0 0 25px #d3d3d3, 0 0 30px #d3d3d3, 0 0 35px #d3d3d3;
 				// text-decoration: solid overline rgb(255, 193, 38) 6px;
 				// color: hsl(198, 100%, 43%);
-			// text-decoration: solid underline hsl(198, 100%, 43%) 6px;
+				// text-decoration: solid underline hsl(198, 100%, 43%) 6px;
 			}
 			.about-link {
 				font-size: 20px;
@@ -86,24 +96,33 @@
 		}
 		.about-container {
 			margin-top: 20px;
-			width: 578px; 
-			height: 200px; 
-			position: relative; 
-			overflow: hidden; 
+			width: 600px;
+			height: 370px;
+			position: relative;
+			overflow: hidden;
 			p {
 				line-height: 25px;
 				font-weight: 600;
 			}
 			.about-slider {
 				margin-top: 60px;
-				height: 100%; 
-				width: 100%; 
+				height: 100%;
+				width: 100%;
 				position: absolute;
 				top: 0;
-				right: 0; 
+				right: 0;
 				background-color: hsl(0, 0%, 98%);
-				transform: translateX(0%); 
+				transform: translateX(0%);
 				transition: transform 1s;
+			}
+			.about-image {
+				// width: 100px;
+				height: 160px; // Set both width and height to 100px
+				// object-fit: contain; // Ensure the image fits within the frame without stretching
+				border-radius: 15px;
+				margin-right: 23px;
+				// margin: auto; // Center the image within its container
+				// display: block; // Ensure the image is treated as a block-level element
 			}
 			.expanded {
 				transform: translateX(100%);
