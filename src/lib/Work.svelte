@@ -11,6 +11,8 @@
 	import scl from '$lib/images/scl.png';
 	import vitu from '$lib/images/vitu.png';
 	import spotifysifter from '$lib/images/spotifysifter.png';
+	import beforeConfusion from '$lib/images/before-confusion.png';
+	import afterConfusion from '$lib/images/after-confusion.png';
 	import { writable } from 'svelte/store';
 
 	let isOpen = false;
@@ -76,13 +78,28 @@
 
 <Modal {isOpen} onClose={closeModal}>
 	{#if $currentProject.title === 'Raytheon'}
-		<div>
+		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
-
-			<p>{$currentProject.description}</p>
-			<p>soiengoiasen</p>
-			piseagnpoeng
-			<img src={$currentProject.image} alt="Raytheon" style="max-width: 100%;" />
+			<p class="description">
+				As part of Purdue's Data Mine program, I worked with Raytheon as a data researcher to
+				develop a machine learning model to predict the Technology Readiness Level (TRL) of a
+				technology. I used Python, Jupyter Notebook, and the Scikit-learn library to develop the
+				model. I developed the code to present confusion matrices to pinpoint the model's accuracy
+				and error. I then developed a custom focal loss function to handle the class imbalance in
+				the dataset. The images below display the before and after confusion matrix of the custom
+				focal loss function.
+			</p>
+			<div class="raytheon-image-container">
+				<img class="raytheon-image" src={beforeConfusion} alt="Before Confusion" />
+				<img class="raytheon-image" src={afterConfusion} alt="After Confusion" />
+			</div>
+		</div>
+	{:else if $currentProject.title === 'Amazon OpenSearch'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				I joined AWS OpenSearch as part of the Open Source Contributor Initiative. I contributed to the <a href="https://github.com/opensearch-project/OpenSearch-Dashboards">OpenSearch Dashboards</a> team where I improved the pull request workflow by requiring a number of reviews and removed the unecessary checks before merging. This increased the development efficiency and integration for future company contributions. I also fixed bugs and improved the codebase by refactoring and writing tests. I worked with the team to review and merge pull requests and participated in team meetings to discuss project progress and future goals.
+			</p>
 		</div>
 	{:else if $currentProject.title === 'GitMe'}
 		<div class="modal-div">
@@ -223,6 +240,16 @@
 			width: 80%;
 			margin-left: auto;
 			margin-right: auto;
+			display: block;
+		}
+		.raytheon-image-container {
+			display: flex;
+			justify-content: space-between;
+		}
+		.raytheon-image {
+			width: 51%;
+			margin-left: 0;
+			margin-right: 0;
 			display: block;
 		}
 	}

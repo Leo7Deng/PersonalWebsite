@@ -185,7 +185,7 @@
 			}
 		}
 		.highlight:nth-of-type(3):after {
-			animation-delay: 1s; // Starts after the first animation finishes
+			animation-delay: 1.3s; // Starts after the first animation finishes
 		}
 	}
 </style>
