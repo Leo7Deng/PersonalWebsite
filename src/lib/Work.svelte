@@ -107,6 +107,7 @@
 				and writing tests. I worked with the team to review and merge pull requests and participated
 				in team meetings to discuss project progress and future goals.
 			</p>
+			<embed class="opensearch-embed" src="https://opensearch.org/docs/latest/dashboards/" />
 		</div>
 	{:else if $currentProject.title === 'GitMe'}
 		<div class="modal-div">
@@ -149,7 +150,8 @@
 			<p class="description">
 				Spotify Sifter is a web application that allows users to sift through large playlists and
 				remove frequently skipped songs. The frontend was built in React and the backend was made
-				with Flask. It is hosted on Railway and uses the Spotify API.
+				with Flask. It is hosted on Railway and uses the Spotify API. You can check out the open source
+				code <a href="https://github.com/Leo7Deng/SpotifySifter" target="_blank">here</a>.
 			</p>
 			<!-- embed website: spotifysifter.com -->
 			<embed src="https://spotifysifter.com" />
@@ -276,9 +278,12 @@
 			margin-right: auto;
 			display: block;
 			width: 600px;
-			height: 450px;
+			height: 430px;
 			border: rgb(65, 65, 65) 1px dotted;
 			border-radius: 10px;
+		}
+		.opensearch-embed {
+			height: 350px;
 		}
 	}
 	a {
