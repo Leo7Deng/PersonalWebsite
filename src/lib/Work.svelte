@@ -98,7 +98,14 @@
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				I joined AWS OpenSearch as part of the Open Source Contributor Initiative. I contributed to the <a href="https://github.com/opensearch-project/OpenSearch-Dashboards">OpenSearch Dashboards</a> team where I improved the pull request workflow by requiring a number of reviews and removed the unecessary checks before merging. This increased the development efficiency and integration for future company contributions. I also fixed bugs and improved the codebase by refactoring and writing tests. I worked with the team to review and merge pull requests and participated in team meetings to discuss project progress and future goals.
+				I joined AWS OpenSearch as part of the Open Source Contributor Initiative. I contributed to
+				the <a href="https://github.com/opensearch-project/OpenSearch-Dashboards"
+					>OpenSearch Dashboards</a
+				> team where I improved the pull request workflow by requiring a number of reviews and removed
+				the unecessary checks before merging. This increased the development efficiency and integration
+				for future company contributions. I also fixed bugs and improved the codebase by refactoring
+				and writing tests. I worked with the team to review and merge pull requests and participated
+				in team meetings to discuss project progress and future goals.
 			</p>
 		</div>
 	{:else if $currentProject.title === 'GitMe'}
@@ -135,6 +142,17 @@
 				>.
 			</p>
 			<img src={usacoDescription} alt="USACO" />
+		</div>
+	{:else if $currentProject.title === 'Spotify Sifter'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				Spotify Sifter is a web application that allows users to sift through large playlists and
+				remove frequently skipped songs. The frontend was built in React and the backend was made
+				with Flask. It is hosted on Railway and uses the Spotify API.
+			</p>
+			<!-- embed website: spotifysifter.com -->
+			<embed src="https://spotifysifter.com" />
 		</div>
 	{:else}
 		<div>
@@ -251,6 +269,16 @@
 			margin-left: 0;
 			margin-right: 0;
 			display: block;
+		}
+		embed {
+			margin-top: 40px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			width: 600px;
+			height: 450px;
+			border: rgb(65, 65, 65) 1px dotted;
+			border-radius: 10px;
 		}
 	}
 	a {
