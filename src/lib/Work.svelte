@@ -14,6 +14,7 @@
 	import beforeConfusion from '$lib/images/before-confusion.png';
 	import afterConfusion from '$lib/images/after-confusion.png';
 	import { writable } from 'svelte/store';
+	import mercuryDescription from '$lib/images/mercury_description.png';
 
 	let isOpen = false;
 	const currentProject = writable({ title: '', description: '', image: '' });
@@ -153,7 +154,6 @@
 				with Flask. It is hosted on Railway and uses the Spotify API. You can check out the open source
 				code <a href="https://github.com/Leo7Deng/SpotifySifter" target="_blank">here</a>.
 			</p>
-			<!-- embed website: spotifysifter.com -->
 			<embed src="https://spotifysifter.com" />
 		</div>
 	{:else if $currentProject.title === 'Machine Learning @ Purdue'}
@@ -165,6 +165,14 @@
 			<embed class="mlp-embed" src="https://ml-purdue.github.io">
 			
 		</div>
+	{:else if $currentProject.title === 'Mercury Alert AI'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				Mercury Alert AI is a fast growing startup that uses machine learning to monitor elderly patients. It alerts caretakers when it detects a fall or other emergencies. I worked with the data labeller, adding features of sorting by accuracy and invoking the training AWS Lambda function in the Jupyter Notebook labeller. I was also heavily involved in the labelling and training of devices, tuning devices when they were not functioning properly. Overall, I was able to improve 8 device accuracies by over 30%. I had many more impactful experiences at Mercury Alert AI, and I loved work there.</p>
+			<img class="mercury-image" src={mercuryDescription} alt="Mercury Description" />
+		</div>
+		
 	{:else}
 		<div>
 			<h2>{$currentProject.title}</h2>
@@ -253,8 +261,8 @@
 		margin-left: auto;
 		margin-right: auto;
 		display: block;
-		width: 600px;
-		height: 400px;
+		width: 645px;
+		height: 430px;
 		margin-top: 40px;
 	}
 	.description {
@@ -296,6 +304,9 @@
 		}
 		.mlp-embed {
 			height: 460px;
+		}
+		.mercury-image {
+			margin-top: 25px;
 		}
 	}
 	a {
