@@ -156,6 +156,15 @@
 			<!-- embed website: spotifysifter.com -->
 			<embed src="https://spotifysifter.com" />
 		</div>
+	{:else if $currentProject.title === 'Machine Learning @ Purdue'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				I am currently the Treasurer of Machine Learning @ Purdue. I manage club finances and company outreach to promote club participation in machine learning projects. I am also currently managing the finances of ML@P's first ever AI x Business hackathon, <a href="http://catapulthacks.com/">Catapult</a>. 
+			</p>
+			<embed class="mlp-embed" src="https://ml-purdue.github.io">
+			
+		</div>
 	{:else}
 		<div>
 			<h2>{$currentProject.title}</h2>
@@ -284,6 +293,9 @@
 		}
 		.opensearch-embed {
 			height: 350px;
+		}
+		.mlp-embed {
+			height: 460px;
 		}
 	}
 	a {
