@@ -14,7 +14,8 @@
 	import beforeConfusion from '$lib/images/before-confusion.png';
 	import afterConfusion from '$lib/images/after-confusion.png';
 	import { writable } from 'svelte/store';
-	import mercuryDescription from '$lib/images/mercury_description.png';
+	import mercuryDescription from '$lib/images/mercury-description.png';
+	import aocDescription from '$lib/images/aoc-description.png';
 
 	let isOpen = false;
 	const currentProject = writable({ title: '', description: '', image: '' });
@@ -143,7 +144,7 @@
 					target="_blank">here</a
 				>.
 			</p>
-			<img src={usacoDescription} alt="USACO" />
+			<img class="usaco-image" src={usacoDescription} alt="USACO" />
 		</div>
 	{:else if $currentProject.title === 'Spotify Sifter'}
 		<div class="modal-div">
@@ -169,10 +170,17 @@
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				Mercury Alert AI is a fast growing startup that uses machine learning to monitor elderly patients. It alerts caretakers when it detects a fall or other emergencies. I worked with the data labeller, adding features of sorting by accuracy and invoking the training AWS Lambda function in the Jupyter Notebook labeller. I was also heavily involved in the labelling and training of devices, tuning devices when they were not functioning properly. Overall, I was able to improve 8 device accuracies by over 30%. I had many more impactful experiences at Mercury Alert AI, and I loved work there.</p>
+				Mercury Alert AI is a fast growing startup that uses machine learning to monitor elderly patients. It alerts caretakers when it detects a fall or other emergencies. I worked with the data labeller, adding features of sorting by accuracy and invoking the training AWS Lambda function in the Jupyter Notebook labeller. I was also heavily involved in the labelling and training of devices, tuning devices when they were not functioning properly. Overall, I was able to improve 8 device accuracies by over 30%. I had many more impactful experiences at Mercury Alert AI. Please reach out if you would like to learn more!</p>
 			<img class="mercury-image" src={mercuryDescription} alt="Mercury Description" />
 		</div>
-		
+	{:else if $currentProject.title === 'Advent of Code'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				Advent of Code is an Advent calendar of algorithmic programming puzzles. 2023 was my first year participating in Advent of Code. I decided to participate in Advent of Code using a language new to me, Rust. I will definitely compete again next year. You can check out my solutions <a href="https://github.com/Leo7Deng/Advent-of-Code-2023" target="_blank">here</a>.
+			</p>
+			<img src={aocDescription} alt="Advent of Code" />
+		</div>
 	{:else}
 		<div>
 			<h2>{$currentProject.title}</h2>
@@ -273,7 +281,7 @@
 		width: 90%;
 		margin: 0 auto;
 		img {
-			margin-top: 80px;
+			margin-top: 50px;
 			width: 80%;
 			margin-left: auto;
 			margin-right: auto;
@@ -307,6 +315,9 @@
 		}
 		.mercury-image {
 			margin-top: 25px;
+		}
+		.usaco-image {
+			margin-top: 80px;
 		}
 	}
 	a {
