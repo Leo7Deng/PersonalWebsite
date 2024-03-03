@@ -16,6 +16,7 @@
 	import { writable } from 'svelte/store';
 	import mercuryDescription from '$lib/images/mercury-description.png';
 	import aocDescription from '$lib/images/aoc-description.png';
+	import sclDescription from '$lib/images/scl-description.png';
 
 	let isOpen = false;
 	const currentProject = writable({ title: '', description: '', image: '' });
@@ -181,6 +182,16 @@
 			</p>
 			<img src={aocDescription} alt="Advent of Code" />
 		</div>
+	{:else if $currentProject.title === 'Sustainable Computing Laboratory'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				As a research intern at the <a href="https://www3.nd.edu/~scl/">Sustainable Computing Laboratory</a> at the University of Notre Dame, I worked with Professor Shi and Xueyang Li, to develop a custom 4D LSTM model to predict <a href="https://docs.google.com/presentation/d/135QuV73FbD0mBCGbiv-rP5wyZbqH-KutIxJf7Ntd0Fs/edit#slide=id.p">Liver Metastases After Colon Cancer Surgery</a>. I researched the most optimal loss functions combined the current 3D-CNN MIL model with LSTM to predict the future state of the patient.
+			</p>
+			<img src={sclDescription} alt="Sustainable Computing Laboratory" />
+		</div>
+
+
 	{:else}
 		<div>
 			<h2>{$currentProject.title}</h2>
