@@ -17,6 +17,8 @@
 	import mercuryDescription from '$lib/images/mercury-description.png';
 	import aocDescription from '$lib/images/aoc-description.png';
 	import sclDescription from '$lib/images/scl-description.png';
+	import vituDescription from '$lib/images/vitu-description.png';
+	import Header from './Header.svelte';
 
 	let isOpen = false;
 	const currentProject = writable({ title: '', description: '', image: '' });
@@ -190,8 +192,14 @@
 			</p>
 			<img src={sclDescription} alt="Sustainable Computing Laboratory" />
 		</div>
-
-
+	{:else if $currentProject.title === 'Vitu'}
+		<div class="modal-div">
+			<h2>{$currentProject.title}</h2>
+			<p class="description">
+				At Vitu, I developed code for the Pandora project, a National API used by car dealers across 50 US states, published to the Vitu Developer Portal. I validated the Computer Vision text extraction model from Base64.ai against 1000+ vehicle registration, license, and insurance test cases to streamline the company's auditing process. I presented the code and impact to the CEO at Vitu Headquarters and mapped future goals for the program to map out future scaling.
+			</p>
+			<img src={vituDescription} alt="Vitu" />
+		</div>
 	{:else}
 		<div>
 			<h2>{$currentProject.title}</h2>
