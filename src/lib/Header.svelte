@@ -154,7 +154,7 @@
 				transform: scaleX(1);
 			}
 		}
-		.highlight:nth-of-type(3):after {
+		.highlight:nth-of-type(2):after {
 			animation-delay: 1.5s; 
 		}
 	}

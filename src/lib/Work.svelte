@@ -220,7 +220,7 @@
 	@import 'normalize.css';
 	.work {
 		margin-top: -90px;
-		margin-bottom: 50px;
+		margin-bottom: 150px;
 		.title {
 			margin-left: 17vw;
 			margin-top: 10vw;
