@@ -102,6 +102,7 @@
 				line-height: 25px;
 				font-weight: 600;
 				font-size: 20px;
+				letter-spacing: 0.1px;
 			}
 			.about-image {
 				height: 165px; 

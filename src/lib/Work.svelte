@@ -32,37 +32,16 @@
 	}
 
 	const works = [
-		{ id: 6, title: 'Raytheon', description: 'Description for Raytheon', image: raytheon },
-		{
-			id: 4,
-			title: 'Amazon OpenSearch',
-			description: 'Description for OpenSearch',
-			image: opensearch
-		},
-		{
-			id: 10,
-			title: 'Spotify Sifter',
-			description: 'Description for Spotify Sifter',
-			image: spotifysifter
-		},
-		{ id: 5, title: 'Machine Learning @ Purdue', description: 'Description for MLP', image: mlp },
-		{ id: 3, title: 'Mercury Alert AI', description: 'Description for Mercury', image: mercury },
-		{
-			id: 1,
-			title: 'GitMe',
-			description:
-				'GitMe is a GitHub repository summary tool for resume planning with Github and ChatGPT API in React and Python. I implemented frontend homepage features, routing with React Router, and input to fetch backend endpoint. I also lead project workflow and organized team structure with Figma and GitHub; presented project demo',
-			image: GitMe
-		},
-		{ id: 2, title: 'Advent of Code', description: 'Description for Advent of Code', image: aoc },
-		{
-			id: 8,
-			title: 'Sustainable Computing Laboratory',
-			description: 'Description for SCL',
-			image: scl
-		},
-		{ id: 9, title: 'Vitu', description: 'Description for Vitu', image: vitu },
-		{ id: 7, title: 'USACO', description: 'Description for USACO', image: usaco }
+		{ title: 'Raytheon', description: 'Data Science Researcher', image: raytheon },
+		{ title: 'Amazon OpenSearch', description: 'Open Source Contributor Initiative Intern', image: opensearch },
+		{ title: 'Spotify Sifter', description: 'Fullstack Developer', image: spotifysifter },
+		{ title: 'Machine Learning @ Purdue', description: 'Vice Executive of Finance', image: mlp },
+		{ title: 'Mercury Alert AI', description: 'Machine Learning Engineering Intern', image: mercury },
+		{ title: 'GitMe', description: 'Fullstack Developer', image: GitMe },
+		{ title: 'Advent of Code', description: 'Rust Hobbyist', image: aoc },
+		{ title: 'Sustainable Computing Laboratory', description: 'Machine Learning Research Intern', image: scl },
+		{ title: 'Vitu', description: 'Software Engineer', image: vitu },
+		{ title: 'USACO', description: 'Data Structures and Algorithms Competitor', image: usaco }
 	];
 </script>
 
@@ -74,6 +53,7 @@
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div class="work-item" on:click={() => openModal(work.title, work.description, work.image)}>
+				<h2 class="work-description">{work.description}</h2>
 				<div class="work-overlay"></div>
 				<img src={work.image} alt={work.title} class="work-image" />
 			</div>
@@ -155,8 +135,8 @@
 			<p class="description">
 				Spotify Sifter is a web application that allows users to sift through large playlists and
 				remove frequently skipped songs. The frontend was built in React and the backend was made
-				with Flask. It is hosted on Railway and uses the Spotify API. You can check out the open source
-				code <a href="https://github.com/Leo7Deng/SpotifySifter" target="_blank">here</a>.
+				with Flask. It is hosted on Railway and uses the Spotify API. You can check out the open
+				source code <a href="https://github.com/Leo7Deng/SpotifySifter" target="_blank">here</a>.
 			</p>
 			<embed src="https://spotifysifter.com" />
 		</div>
@@ -164,23 +144,37 @@
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				I am currently the Treasurer of Machine Learning @ Purdue. I manage club finances and company outreach to promote club participation in machine learning projects. I am also currently managing the finances of ML@P's first ever AI x Business hackathon, <a href="http://catapulthacks.com/">Catapult</a>. 
+				I am currently the Treasurer of Machine Learning @ Purdue. I manage club finances and
+				company outreach to promote club participation in machine learning projects. I am also
+				currently managing the finances of ML@P's first ever AI x Business hackathon, <a
+					href="http://catapulthacks.com/">Catapult</a
+				>.
 			</p>
-			<embed class="mlp-embed" src="https://ml-purdue.github.io">
-			
+			<embed class="mlp-embed" src="https://ml-purdue.github.io" />
 		</div>
 	{:else if $currentProject.title === 'Mercury Alert AI'}
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				Mercury Alert AI is a fast growing startup that uses machine learning to monitor elderly patients. It alerts caretakers when it detects a fall or other emergencies. I worked with the data labeller, adding features of sorting by accuracy and invoking the training AWS Lambda function in the Jupyter Notebook labeller. I was also heavily involved in the labelling and training of devices, tuning devices when they were not functioning properly. Overall, I was able to improve 8 device accuracies by over 30%. I had many more impactful experiences at Mercury Alert AI. Please reach out if you would like to learn more!</p>
+				Mercury Alert AI is a fast growing startup that uses machine learning to monitor elderly
+				patients. It alerts caretakers when it detects a fall or other emergencies. I worked with
+				the data labeller, adding features of sorting by accuracy and invoking the training AWS
+				Lambda function in the Jupyter Notebook labeller. I was also heavily involved in the
+				labelling and training of devices, tuning devices when they were not functioning properly.
+				Overall, I was able to improve 8 device accuracies by over 30%. I had many more impactful
+				experiences at Mercury Alert AI. Please reach out if you would like to learn more!
+			</p>
 			<img class="mercury-image" src={mercuryDescription} alt="Mercury Description" />
 		</div>
 	{:else if $currentProject.title === 'Advent of Code'}
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				Advent of Code is an Advent calendar of algorithmic programming puzzles. 2023 was my first year participating in Advent of Code. I decided to participate in Advent of Code using a language new to me, Rust. I will definitely compete again next year. You can check out my solutions <a href="https://github.com/Leo7Deng/Advent-of-Code-2023" target="_blank">here</a>.
+				Advent of Code is an Advent calendar of algorithmic programming puzzles. 2023 was my first
+				year participating in Advent of Code. I decided to participate in Advent of Code using a
+				language new to me, Rust. I will definitely compete again next year. You can check out my
+				solutions <a href="https://github.com/Leo7Deng/Advent-of-Code-2023" target="_blank">here</a
+				>.
 			</p>
 			<img src={aocDescription} alt="Advent of Code" />
 		</div>
@@ -188,7 +182,16 @@
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				As a research intern at the <a href="https://www3.nd.edu/~scl/">Sustainable Computing Laboratory</a> at the University of Notre Dame, I worked with Professor Shi and Xueyang Li, to develop a custom 4D LSTM model to predict <a href="https://docs.google.com/presentation/d/135QuV73FbD0mBCGbiv-rP5wyZbqH-KutIxJf7Ntd0Fs/edit#slide=id.p">Liver Metastases After Colon Cancer Surgery</a>. I researched the most optimal loss functions combined the current 3D-CNN MIL model with LSTM to predict the future state of the patient.
+				As a research intern at the <a href="https://www3.nd.edu/~scl/"
+					>Sustainable Computing Laboratory</a
+				>
+				at the University of Notre Dame, I worked with Professor Shi and Xueyang Li, to develop a custom
+				4D LSTM model to predict
+				<a
+					href="https://docs.google.com/presentation/d/135QuV73FbD0mBCGbiv-rP5wyZbqH-KutIxJf7Ntd0Fs/edit#slide=id.p"
+					>Liver Metastases After Colon Cancer Surgery</a
+				>. I researched the most optimal loss functions combined the current 3D-CNN MIL model with
+				LSTM to predict the future state of the patient.
 			</p>
 			<img src={sclDescription} alt="Sustainable Computing Laboratory" />
 		</div>
@@ -196,7 +199,12 @@
 		<div class="modal-div">
 			<h2>{$currentProject.title}</h2>
 			<p class="description">
-				At Vitu, I developed code for the Pandora project, a National API used by car dealers across 50 US states, published to the Vitu Developer Portal. I validated the Computer Vision text extraction model from Base64.ai against 1000+ vehicle registration, license, and insurance test cases to streamline the company's auditing process. I presented the code and impact to the CEO at Vitu Headquarters and mapped future goals for the program to map out future scaling.
+				At Vitu, I developed code for the Pandora project, a National API used by car dealers across
+				50 US states, published to the Vitu Developer Portal. I validated the Computer Vision text
+				extraction model from Base64.ai against 1000+ vehicle registration, license, and insurance
+				test cases to streamline the company's auditing process. I presented the code and impact to
+				the CEO at Vitu Headquarters and mapped future goals for the program to map out future
+				scaling.
 			</p>
 			<img src={vituDescription} alt="Vitu" />
 		</div>
@@ -260,12 +268,20 @@
 		opacity: 0.6;
 		transition: 0.5s;
 	}
-	.work-title {
-		display: absolute;
+	.work-description {
+		position: absolute;
+		left: 15px;
+		top: 15px;
 		margin-top: 0px;
-		font-size: 30px;
+		font-size: 20px;
 		font-weight: bold;
 		color: white;
+		z-index: 3;
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
+	.work-item:hover .work-description {
+    	opacity: 1;
 	}
 	.work-image {
 		margin-left: auto;
