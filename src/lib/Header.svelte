@@ -21,22 +21,24 @@
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="title">
 			<h1 class="name">
-				Hi 👋, I'm <span class="name-span">Leo</span>, a student <br />
-				studying <span class="highlight">computer science</span> at
+				Hi 👋, I'm <span class="name-span">Leo</span>, a student studying
+			  </h1>
+			  <!-- <h3>
+				⋅world traveller<br />
+				⋅gym rat<br />
+				⋅poker enthusiast
+			  </h3> -->
+			  <h1 class="name">
+				 <span class="highlight">computer science</span> at
 				<span class="highlight">Purdue</span>.
-			</h1>
+			  </h1>
+			  
+			  
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<div class="about-container">
 				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-				<p class="about-link" on:click={toggleExpansion}>
-					About Me <span class={isRotated ? 'rotated' : 'unrotated'}>⮐</span>
-				</p>
-				<div class="about-slider" class:expanded={isExpanded}></div>
 				<p>
-					I'm in love with developing my knowledge for computer science and software engineering.
-					First finding interest in deep learning, I involved myself with research and startups.
-					Now, I am learning to develop front and back end applications as well as learning new
-					languages like C and Rust.
+					You will find my previous work in deep learning, research, and startups. Now, I am learning to develop front and back end applications as well as learning new languages like C and Rust.
 				</p>
 				<!-- images face, dog, beach, greece -->
 				<img class="about-image" src={face} alt="face" />
@@ -72,19 +74,15 @@
 				margin-top: 0px;
 				font-size: 33px;
 				font-weight: bold;
-				margin-bottom: 30px;
+				margin-bottom: 5px;
+
 			}
-			.name-span {
-				// color: rgb(255, 193, 38);
-				// font-weight: 800;
-				// 1px shadow
-				// text-shadow: rgb(180, 132, 0) 1px 1px 1px;
-				// shadow
-				// text-shadow: 0 0 5px #d3d3d3, 0 0 10px #d3d3d3, 0 0 15px #d3d3d3, 0 0 20px #d3d3d3,
-				// 0 0 25px #d3d3d3, 0 0 30px #d3d3d3, 0 0 35px #d3d3d3;
-				// text-decoration: solid overline rgb(255, 193, 38) 6px;
-				// color: hsl(198, 100%, 43%);
-				// text-decoration: solid underline hsl(198, 100%, 43%) 6px;
+			h3 {
+				font-size: 20px;
+				font-weight: 600;
+				margin-bottom: 0px;
+				margin-top: 0px;
+				line-height: 30px;
 			}
 			.about-link {
 				font-size: 20px;
@@ -103,40 +101,12 @@
 			p {
 				line-height: 25px;
 				font-weight: 600;
-			}
-			.about-slider {
-				margin-top: 60px;
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				top: 0;
-				right: 0;
-				background-color: hsl(0, 0%, 98%);
-				transform: translateX(0%);
-				transition: transform 1s;
+				font-size: 20px;
 			}
 			.about-image {
-				// width: 100px;
-				height: 160px; // Set both width and height to 100px
-				// object-fit: contain; // Ensure the image fits within the frame without stretching
+				height: 165px; 
 				border-radius: 15px;
 				margin-right: 23px;
-				// margin: auto; // Center the image within its container
-				// display: block; // Ensure the image is treated as a block-level element
-			}
-			.expanded {
-				transform: translateX(100%);
-			}
-			.rotated {
-				transform: rotate(-90deg);
-				display: inline-block;
-				transition: 0.5s;
-				text-decoration: underline;
-			}
-			.unrotated {
-				display: inline-block;
-				transition: 0.5s;
-				text-decoration: underline;
 			}
 		}
 		.icons {
@@ -147,7 +117,7 @@
 			margin-left: 20vw;
 		}
 		.icon {
-			width: 40px;
+			width: 50px;
 			padding: 5px;
 			height: auto;
 			border-radius: 5px;
@@ -161,14 +131,13 @@
 			position: relative;
 			color: hsl(198, 100%, 43%);
 			font-weight: 800;
-			// Added for animation
 			overflow: hidden;
 			&:after {
 				content: '';
 				position: absolute;
 				left: 0;
-				bottom: -2px; // Adjust as needed to position the underline
-				height: 6px; // Height of the underline
+				bottom: -2px; 
+				height: 6px; 
 				width: 100%;
 				background-color: hsl(198, 100%, 43%);
 				transform: scaleX(0);
@@ -185,7 +154,7 @@
 			}
 		}
 		.highlight:nth-of-type(3):after {
-			animation-delay: 1.3s; // Starts after the first animation finishes
+			animation-delay: 1.5s; 
 		}
 	}
 </style>
