@@ -8,39 +8,22 @@
 	import beach from '$lib/images/beach.jpg';
 	import dog from '$lib/images/dog.jpg';
 	import face from '$lib/images/face.png';
-	let isExpanded = false;
-	let isRotated = false;
-	function toggleExpansion() {
-		isExpanded = !isExpanded;
-		isRotated = !isRotated;
-	}
 </script>
 
-<div class="header2">
+<div class="header">
 	<div class="content-wrapper">
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="title">
 			<h1 class="name">
-				Hi 👋, I'm <span class="name-span">Leo</span>, a student studying
-			  </h1>
-			  <!-- <h3>
-				⋅world traveller<br />
-				⋅gym rat<br />
-				⋅poker enthusiast
-			  </h3> -->
-			  <h1 class="name">
-				 <span class="highlight">computer science</span> at
+				Hi 👋, I'm <span class="name-span">Leo</span>, a student studying<br />
+				<span class="highlight">computer science</span> at
 				<span class="highlight">Purdue</span>.
-			  </h1>
-			  
-			  
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			</h1>
 			<div class="about-container">
-				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 				<p>
-					You will find my previous work in deep learning, research, and startups. Now, I am learning to develop front and back end applications as well as learning new languages like C and Rust.
+					You will find my previous work in deep learning, research, and startups. Now, I am
+					learning to develop front and back end applications as well as learning new languages like
+					C and Rust.
 				</p>
-				<!-- images face, dog, beach, greece -->
 				<img class="about-image" src={face} alt="face" />
 				<img class="about-image" src={dog} alt="dog" />
 				<img class="about-image" src={beach} alt="beach" />
@@ -62,8 +45,9 @@
 
 <style lang="scss">
 	@import 'normalize.css';
-	.header2 {
+	.header {
 		margin-top: 20vh;
+		margin-bottom: 0px;
 		.content-wrapper {
 			display: flex;
 			align-items: start;
@@ -75,7 +59,6 @@
 				font-size: 33px;
 				font-weight: bold;
 				margin-bottom: 5px;
-
 			}
 			h3 {
 				font-size: 20px;
@@ -95,7 +78,7 @@
 		.about-container {
 			margin-top: 20px;
 			width: 600px;
-			height: 370px;
+			height: 347px;
 			position: relative;
 			overflow: hidden;
 			p {
@@ -105,7 +88,7 @@
 				letter-spacing: 0.1px;
 			}
 			.about-image {
-				height: 165px; 
+				height: 165px;
 				border-radius: 15px;
 				margin-right: 23px;
 			}
@@ -137,8 +120,8 @@
 				content: '';
 				position: absolute;
 				left: 0;
-				bottom: -2px; 
-				height: 6px; 
+				bottom: -2px;
+				height: 6px;
 				width: 100%;
 				background-color: hsl(198, 100%, 43%);
 				transform: scaleX(0);
@@ -154,8 +137,8 @@
 				transform: scaleX(1);
 			}
 		}
-		.highlight:nth-of-type(2):after {
-			animation-delay: 1.5s; 
+		.highlight:nth-of-type(3):after {
+			animation-delay: 1.5s;
 		}
 	}
 </style>
