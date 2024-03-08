@@ -33,13 +33,25 @@
 
 	const works = [
 		{ title: 'Raytheon', description: 'Data Science Researcher', image: raytheon },
-		{ title: 'Amazon OpenSearch', description: 'Open Source Contributor Initiative Intern', image: opensearch },
+		{
+			title: 'Amazon OpenSearch',
+			description: 'Open Source Contributor Initiative Intern',
+			image: opensearch
+		},
 		{ title: 'Spotify Sifter', description: 'Fullstack Developer', image: spotifysifter },
 		{ title: 'Machine Learning @ Purdue', description: 'Vice Executive of Finance', image: mlp },
-		{ title: 'Mercury Alert AI', description: 'Machine Learning Engineering Intern', image: mercury },
+		{
+			title: 'Mercury Alert AI',
+			description: 'Machine Learning Engineering Intern',
+			image: mercury
+		},
 		{ title: 'GitMe', description: 'Fullstack Developer', image: GitMe },
 		{ title: 'Advent of Code', description: 'Rust Hobbyist', image: aoc },
-		{ title: 'Sustainable Computing Laboratory', description: 'Machine Learning Research Intern', image: scl },
+		{
+			title: 'Sustainable Computing Laboratory',
+			description: 'Machine Learning Research Intern',
+			image: scl
+		},
 		{ title: 'Vitu', description: 'Software Engineer', image: vitu },
 		{ title: 'USACO', description: 'Data Structures and Algorithms Competitor', image: usaco }
 	];
@@ -58,6 +70,7 @@
 				<img src={work.image} alt={work.title} class="work-image" />
 			</div>
 		{/each}
+		<p class="footer">Leo Deng © 2024</p>
 	</div>
 </div>
 
@@ -220,7 +233,7 @@
 	@import 'normalize.css';
 	.work {
 		margin-top: -90px;
-		margin-bottom: 150px;
+		margin-bottom: 20px;
 		.title {
 			margin-left: 17vw;
 			margin-top: 10vw;
@@ -281,7 +294,7 @@
 		transition: opacity 0.5s;
 	}
 	.work-item:hover .work-description {
-    	opacity: 1;
+		opacity: 1;
 	}
 	.work-image {
 		margin-left: auto;
@@ -357,5 +370,10 @@
 	}
 	a {
 		color: hsl(198, 100%, 43%);
+	}
+	.footer {
+		grid-column: 2;
+		margin-top: 50px;
+		font-weight: 600;
 	}
 </style>
