@@ -18,7 +18,6 @@
 	import aocDescription from '$lib/images/aoc-description.png';
 	import sclDescription from '$lib/images/scl-description.png';
 	import vituDescription from '$lib/images/vitu-description.png';
-	import Header from './Header.svelte';
 
 	let isOpen = false;
 	const currentProject = writable({ title: '', description: '', image: '' });
@@ -33,25 +32,13 @@
 
 	const works = [
 		{ title: 'Raytheon', description: 'Data Science Researcher', image: raytheon },
-		{
-			title: 'Amazon OpenSearch',
-			description: 'Open Source Contributor Initiative Intern',
-			image: opensearch
-		},
+		{ title: 'Amazon OpenSearch', description: 'Open Source Contributor Initiative Intern', image: opensearch},
 		{ title: 'Spotify Sifter', description: 'Fullstack Developer', image: spotifysifter },
 		{ title: 'Machine Learning @ Purdue', description: 'Vice Executive of Finance', image: mlp },
-		{
-			title: 'Mercury Alert AI',
-			description: 'Machine Learning Engineering Intern',
-			image: mercury
-		},
+		{ title: 'Mercury Alert AI', description: 'Machine Learning Engineering Intern', image: mercury },
 		{ title: 'GitMe', description: 'Fullstack Developer', image: GitMe },
 		{ title: 'Advent of Code', description: 'Rust Hobbyist', image: aoc },
-		{
-			title: 'Sustainable Computing Laboratory',
-			description: 'Machine Learning Research Intern',
-			image: scl
-		},
+		{ title: 'Sustainable Computing Laboratory', description: 'Machine Learning Research Intern', image: scl },
 		{ title: 'Vitu', description: 'Software Engineer', image: vitu },
 		{ title: 'USACO', description: 'Data Structures and Algorithms Competitor', image: usaco }
 	];

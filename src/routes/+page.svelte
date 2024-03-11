@@ -3,7 +3,7 @@
 	import Work from '$lib/Work.svelte';
 </script>
 
-<div id="scroller">
+<div>
 	<Header></Header>
 	<Work></Work>
 </div>
